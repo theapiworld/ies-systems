@@ -1,0 +1,23 @@
+<div class="container-login100" style="background-image: url('../../../../assets/backlogin.jpg');">
+<div class="pen-title">
+  <img src="assets/IES-logo.svg" alt="IES Systems"
+       title="IES Systems" width="397" height="100">
+</div>
+<div class="container">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title">Acceso</h1>
+    <alert></alert>
+    <form>
+      <div class="input-container"><input type="#{type}" #username id="#{label}" required="required" /><label for="#{label}">Username</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container"><input type="password" #password id="#{label}" required="required" /><label for="#{label}">Password</label>
+        <div class="bar"></div>
+      </div>
+      <div class="button-container"><button (click)="logIn(username.value, password.value)"><span>Acceder</span></button></div>
+      <div class="footer"><a >¿Olvido contraseña?</a></div>
+    </form>
+  </div>
+</div>
+</div>

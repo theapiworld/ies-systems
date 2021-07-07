@@ -1,0 +1,15 @@
+.wrap-login100 {
+  overflow: hidden;
+  background: #d7d7d7 !important;
+  background: -webkit-linear-gradient(top, #4b8ed5, #056ad6);
+  background: -o-linear-gradient(top, #4b8ed5, #056ad6);
+  background: -moz-linear-gradient(top, #4b8ed5, #056ad6);
+  background: linear-gradient(top, #4b8ed5, #056ad6);
+}
+@media only screen and (max-width: 767px){
+  .wrap-login100 img {
+    width: 290px;
+    height: auto;
+    margin: 6px 0 0 -30px;
+  }
+}
