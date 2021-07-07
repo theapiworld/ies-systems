@@ -8,16 +8,16 @@
   <div class="card">
     <h1 class="title">Acceso</h1>
     <alert></alert>
-    <form>
-      <div class="input-container"><input type="#{type}" #username id="#{label}" required="required" /><label for="#{label}">Username</label>
+    <form [formGroup]="formDatos">
+      <div class="input-container"><input type="#{type}"   formControlName="emailFormControl"  #username id="#{label}" required="required" /><label for="#{label}">Username</label>
         <div class="bar"></div>
       </div>
-      <div class="input-container"><input type="password" #password id="#{label}" required="required" /><label for="#{label}">Password</label>
+      <div class="input-container"><input type="password"    formControlName="passwordFormControl" #password id="#{label}" required="required" /><label for="#{label}">Password</label>
         <div class="bar"></div>
       </div>
-      <div class="button-container"><button (click)="logIn(username.value, password.value)"><span>Acceder</span></button></div>
-      <div class="footer"><a >¿Olvido contraseña?</a></div>
     </form>
+    <div class="button-container"><button (click)="logIn(username.value, password.value)"><span>Acceder</span></button></div>
+    <div class="footer"><a >¿Olvido contraseña?</a></div>
   </div>
 </div>
 </div>

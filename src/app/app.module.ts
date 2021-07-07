@@ -27,7 +27,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     BrowserAnimationsModule,
     MatIconModule,
     ReactiveFormsModule,
-    AlertModule
+    AlertModule,
+
   ],
   providers: [AlertService, AuthPublicService],
   bootstrap: [AppComponent]
