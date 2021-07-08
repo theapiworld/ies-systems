@@ -1,0 +1,173 @@
+<div class="section">
+    <div class="section-header">
+        <h1>Menu Principal - Bienvenido</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-primary">
+                    <i class="far fa fa fa-users" style="zoom: 150%"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header border-left border-danger border-bottom-0">
+                        <h4>Pendientes</h4>
+                    </div>
+                    <div class="card-body">
+                        10
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-danger">
+                    <i class="far fa fa-user-times" style="zoom: 150%"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header border-left border-danger border-bottom-0">
+                        <h4>Canceladas</h4>
+                    </div>
+                    <div class="card-body">
+                        10
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-warning">
+                    <i class="far fa fa-hourglass-half" style="zoom: 150%"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header border-left border-danger border-bottom-0">
+                        <h4>En proceso</h4>
+                    </div>
+                    <div class="card-body">
+                        10
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-success">
+                    <i class="fas fa fa-user-plus" style="zoom: 150%"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header border-left border-danger border-bottom-0">
+                        <h4>Vendidas</h4>
+                    </div>
+                    <div class="card-body">
+                        10
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+            <div class="card">
+                <div class="card-header border-left border-bottom-0 border-danger">
+                    <h4>Promociones</h4>
+                    <div class="card-header-action">
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-secondary">Semana</a>
+                            <a href="#" class="btn">Mes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="photo-content">
+                        <a><img
+                                src="../../../../../../../assets/images/banner.jpg" alt="promosestacionales"
+                                class="img-fluid"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-12 col-sm-12">
+            <div class="card">
+                <div class="card-header border-left border-bottom-0 border-danger">
+                    <h4>Notificaciones</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled list-unstyled-border">
+                        <li class="media">
+                            <img class="mr-3 rounded-circle" width="50" src="./assets/images/avatar.jpg"
+                                 alt="avatar">
+                            <div class="media-body">
+                                <div class="float-right text-primary">Promocion de temporada</div>
+                                <div class="media-title">20% de descuento</div>
+                                <span class="text-small text-muted">Vende con descuento.</span>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <img class="mr-3 rounded-circle" width="50" src="./assets/images/avatar.jpg"
+                                 alt="avatar">
+                            <div class="media-body">
+                                <div class="float-right text-primary">Promocion de temporada</div>
+                                <div class="media-title">20% de descuento</div>
+                                <span class="text-small text-muted">Vende con descuento.</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="text-center pt-1 pb-1">
+                        <a href="#" class="btn btn-secondary btn-lg btn-round">
+                            Ver todas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Categorias</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row pb-2">
+                        <a [routerLink]="['/dashboard/principal/cotizar']"
+                           class="containerbox col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
+                            <div class="box avatar-item mb-0 text-center">
+                                <div id="mascaratres"></div>
+                                <div class="boxContent avatar-badge font-weight-bold" title="Cotiza"
+                                     data-toggle="tooltip">
+                                    <h1 class="titleCard">Cotiza</h1>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="containerbox col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
+                            <div class="box avatar-item mb-0 text-center">
+                                <div id="mascarados"></div>
+                                <div class="boxContent avatar-badge font-weight-bold" title="Emisiones"
+                                     data-toggle="tooltip">
+                                    <h1 class="titleCard">Emite</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="containerbox col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
+                            <div class="box avatar-item mb-0 text-center">
+                                <div id="mascarauno"></div>
+                                <div class="boxContent avatar-badge font-weight-bold" title="Solicitudes"
+                                     data-toggle="tooltip">
+                                    <h1 class="titleCard">Solicitudes</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="containerbox col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
+                            <div class="box avatar-item mb-0 text-center">
+                                <div id="mascara"></div>
+                                <div class="boxContent avatar-badge font-weight-bold" title="Endosos"
+                                     data-toggle="tooltip">
+                                    <h1 class="titleCard">Endosos</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

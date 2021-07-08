@@ -12,6 +12,8 @@ import {AlertModule, AlertService} from "./_alert";
 import {AuthPublicService} from "./services/security/auth-public.service";
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import { IonicModule } from '@ionic/angular';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatIconModule,
     ReactiveFormsModule,
     AlertModule,
+    IonicModule.forRoot(),
 
   ],
   providers: [AlertService, AuthPublicService],
