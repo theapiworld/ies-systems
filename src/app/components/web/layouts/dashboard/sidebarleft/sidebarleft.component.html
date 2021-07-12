@@ -53,7 +53,7 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-title">roquenoe-@hotmail.com</div>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item has-icon text-danger">
+                        <a [routerLink]="['']" (click)="logout()" class="dropdown-item has-icon text-danger">
                             <ion-icon name="log-out"></ion-icon>
                             Salir
                         </a>
