@@ -19,6 +19,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSelectModule} from "@angular/material/select";
 import {MatButtonModule} from "@angular/material/button";
+import {authInterceptorProviders} from "../../../../services/security/auth.interceptor.service";
+import {CanActivateRouteGuard} from "../../../../services/security/can-activate-route.guard";
 
 @NgModule({
     declarations: [
@@ -44,7 +46,8 @@ import {MatButtonModule} from "@angular/material/button";
         MatDatepickerModule,
         MatSelectModule,
         MatButtonModule,
-    ]
+    ],
+    providers: [ authInterceptorProviders, CanActivateRouteGuard]
 })
 export class DashboardModule {
 }

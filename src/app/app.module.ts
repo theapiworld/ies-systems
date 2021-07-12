@@ -43,6 +43,9 @@ import {MatCardModule} from "@angular/material/card";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatButtonModule} from "@angular/material/button";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {AuthenticationService} from "./services/security/authentication.service";
+import {CanActivateRouteGuard} from "./services/security/can-activate-route.guard";
+import {authInterceptorProviders} from "./services/security/auth.interceptor.service";
 
 @NgModule({
   declarations: [
@@ -120,7 +123,7 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     MatTooltipModule,
     MatStepperModule,
   ],
-  providers: [AlertService, AuthPublicService],
+  providers: [AlertService, AuthPublicService, authInterceptorProviders, CanActivateRouteGuard, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
