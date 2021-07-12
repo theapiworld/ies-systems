@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthPublicService} from "../../../../../../services/security/auth-public.service";
 
 @Component({
@@ -10,37 +10,48 @@ import {AuthPublicService} from "../../../../../../services/security/auth-public
 export class FormularioComponent implements OnInit {
   minDate: any
   maxDate: any
-  email = new FormControl('', [Validators.required, Validators.email]);
-  date = new FormControl('', [Validators.required]);
-  nombre = new FormControl('', [Validators.required]);
   countries: any = [];
   countriesData: any = [];
   validateData: boolean;
+  post: any;
+  formGroup: FormGroup;
+  paises: any;
+   validateForm: boolean;
+
+  get dataControls() {
+    return this.formGroup.controls;
+  }
 
   getErrorMessageDate() {
-    if (this.date.hasError('required')) {
+    if (this.dataControls.date.hasError('required')) {
       return 'Tiene que introducir una fecha';
     }
-    return this.email.hasError('date') ? 'Introduzca una fecha' : '';
+    return this.dataControls.date.hasError('date') ? 'Introduzca una fecha' : '';
   }
   getErrorMessage() {
-    if (this.email.hasError('required')) {
+    if (this.dataControls.email.hasError('required')) {
       return 'Tiene que introducir un correo';
     }
 
-    return this.email.hasError('email') ? 'Introduzca un correo valido' : '';
+    return this.dataControls.email.hasError('email') ? 'Introduzca un correo valido' : '';
   }
   getErrorMessageNombre() {
-    if (this.nombre.hasError('required')) {
+    if (this.dataControls.nombre.hasError('required')) {
       return 'Tiene que introducir su nombre';
     }
 
-    return this.nombre.hasError('nombre') ? 'Introduzca su nombre' : '';
+    return this.dataControls.nombre.hasError('nombre') ? 'Introduzca su nombre' : '';
   }
   constructor(public authPublic: AuthPublicService) { }
 
   validate(){
-    this.validateData = this.nombre.invalid && this.date.hasError('required') && this.email.hasError('required');
+    this.validateData = this.dataControls.nombre.invalid && this.dataControls.date.hasError('required') && this.dataControls.email.hasError('required');
+  }
+
+  onSubmit(post: any) {
+    this.validateForm = true;
+    this.post = post;
+    debugger
   }
 
   getCountries(){
@@ -53,6 +64,13 @@ export class FormularioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.validateForm = false;
+    this.formGroup = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      date: new FormControl('', [Validators.required]),
+      nombre: new FormControl('', [Validators.required]),
+      paises: new FormControl('', [Validators.required]),
+    });
     this.getCountries();
     this.validateData = true;
     const day = new Date();

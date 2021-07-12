@@ -1,41 +1,41 @@
-<div class="card-body">
+<div class="card-body col-12 row">
     <mat-toolbar color="primary">
         <span class="fill-remaining-space">FORMULARIO</span>
     </mat-toolbar>
-    <div class="col">
-        <form>
+    <div class="col-6">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
             <div class="example-container">
                 <br>
                 <mat-form-field>
                     <input matInput [min]="minDate" [max]="maxDate" (blur)="validate()"
-                           [formControl]="date" required
+                           formControlName="date" required
                            [matDatepicker]="picker" placeholder="Selecciona una fecha">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-                    <mat-error *ngIf="date.invalid">{{getErrorMessageDate()}}</mat-error>
+                    <mat-error *ngIf="dataControls.date.invalid">{{getErrorMessageDate()}}</mat-error>
                 </mat-form-field>
             </div>
             <div class="example-container">
                 <br>
                 <mat-form-field appearance="fill">
                     <mat-label>Introduzca su correo</mat-label>
-                    <input matInput placeholder="ejemplo@gmail.com" (blur)="validate()" [formControl]="email" required>
-                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    <input matInput placeholder="ejemplo@gmail.com" (blur)="validate()" formControlName="email" required>
+                    <mat-error *ngIf="dataControls.email.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
             </div>
             <div class="example-container">
                 <br>
                 <mat-form-field appearance="fill">
                     <mat-label>Introduzca su nombre</mat-label>
-                    <input matInput placeholder="nombre" (blur)="validate()" [formControl]="nombre" required>
-                    <mat-error *ngIf="nombre.invalid">{{getErrorMessageNombre()}}</mat-error>
+                    <input matInput placeholder="nombre" (blur)="validate()" formControlName="nombre" required>
+                    <mat-error *ngIf="dataControls.nombre.invalid">{{getErrorMessageNombre()}}</mat-error>
                 </mat-form-field>
             </div>
             <div class="example-container">
                 <br>
                 <mat-form-field appearance="fill">
                     <mat-label>Paises</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="paises">
                         <mat-option *ngFor="let country of countriesData" [value]="country.country">
                             {{country.country}}
                         </mat-option>
@@ -45,8 +45,15 @@
             <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="validateData">
                 Enviar
             </button>
-
         </form>
-
+    </div>
+    <div class="col-6">
+        <mat-toolbar color="accent">
+            <span class="fill-remaining-space">Resultado</span>
+        </mat-toolbar>
+        <div *ngIf="this.validateForm" class="container font-weight-bold">
+            <br>
+           <code> {{ post | json }} </code>
+        </div>
     </div>
 </div>
