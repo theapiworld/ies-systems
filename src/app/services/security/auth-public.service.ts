@@ -16,5 +16,8 @@ export class AuthPublicService {
             .post<any>(environment.ENDPOINTBASE + 'user/validarUsuario', dataUser);
     }
 
+    getCountries() {
+        return this.httpClient.get<any>(`${environment.ENDPOINTBASE2}`);
+    }
 
 }

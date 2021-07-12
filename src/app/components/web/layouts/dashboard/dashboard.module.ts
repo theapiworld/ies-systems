@@ -11,6 +11,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AlertModule} from "../../../../_alert";
 import {IonicModule} from "@ionic/angular";
 import {RouterModule} from "@angular/router";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import { FormularioComponent } from './maincontainer/formulario/formulario.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatSelectModule} from "@angular/material/select";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
     declarations: [
@@ -18,7 +26,8 @@ import {RouterModule} from "@angular/router";
         FooterComponent,
         HeaderComponent,
         MaincontainerComponent,
-        SidebarleftComponent
+        SidebarleftComponent,
+        FormularioComponent
     ],
     imports: [
         CommonModule,
@@ -28,6 +37,13 @@ import {RouterModule} from "@angular/router";
         FormsModule,
         IonicModule,
         DashboardRoutingModule,
+        MatToolbarModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatCheckboxModule,
+        MatDatepickerModule,
+        MatSelectModule,
+        MatButtonModule,
     ]
 })
 export class DashboardModule {

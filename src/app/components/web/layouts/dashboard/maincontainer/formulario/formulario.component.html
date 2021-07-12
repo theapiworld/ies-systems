@@ -1,0 +1,52 @@
+<div class="card-body">
+    <mat-toolbar color="primary">
+        <span class="fill-remaining-space">FORMULARIO</span>
+    </mat-toolbar>
+    <div class="col">
+        <form>
+            <div class="example-container">
+                <br>
+                <mat-form-field>
+                    <input matInput [min]="minDate" [max]="maxDate" (blur)="validate()"
+                           [formControl]="date" required
+                           [matDatepicker]="picker" placeholder="Selecciona una fecha">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="date.invalid">{{getErrorMessageDate()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="example-container">
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Introduzca su correo</mat-label>
+                    <input matInput placeholder="ejemplo@gmail.com" (blur)="validate()" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="example-container">
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Introduzca su nombre</mat-label>
+                    <input matInput placeholder="nombre" (blur)="validate()" [formControl]="nombre" required>
+                    <mat-error *ngIf="nombre.invalid">{{getErrorMessageNombre()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="example-container">
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Paises</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let country of countriesData" [value]="country.country">
+                            {{country.country}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="validateData">
+                Enviar
+            </button>
+
+        </form>
+
+    </div>
+</div>
